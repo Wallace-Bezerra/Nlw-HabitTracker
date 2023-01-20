@@ -7,14 +7,18 @@
   text-decoration: none;
   list-style: none;
 }
-body {
+html {
   min-height: 100vh;
+}
+body {
   margin: 0 auto;
   background-color: #09090a;
-
-  padding-inline: 120px;
-  padding-block: 100px;
+  margin-inline: 120px;
+  /* padding-block: 100px; */
   display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow-x: scroll; */
   flex-direction: column;
   gap: 48px;
 }
@@ -22,8 +26,14 @@ header {
   display: flex;
   align-items: center;
   max-width: 1200px;
+  padding-inline: 120px;
+  padding-top: 100px;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
   padding-right: 120px;
+  background-color: #09090a;
+  width: 100%;
 }
 button {
   font-family: "Inter";
@@ -47,7 +57,14 @@ button:hover {
 #form-habits {
   display: flex;
   gap: 24px;
+  max-width: 1200px;
+  padding-top: 84px;
+  padding-top: 220px;
+  width: 100%;
+  /* width: 1800px; */
+  /* overflow: scroll; */
 }
+
 input {
   appearance: none;
   width: 64px;
@@ -62,7 +79,6 @@ input:checked {
   border: 2px solid #a78bfa;
   border-radius: 8px;
 }
-
 .habits {
   display: flex;
   flex-direction: column;
@@ -79,16 +95,16 @@ input:checked {
   align-items: center;
   justify-content: center;
 }
-.days-tracker {
+.days {
   display: flex;
   gap: 48px;
 }
-.days {
+.day {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.days .day {
+.day div {
   font-family: "Roboto Mono";
   font-size: 20px;
   line-height: 125%;
@@ -101,6 +117,15 @@ input:checked {
   flex-direction: column;
   gap: 24px;
 }
-.input-days li {
-  display: flex;
+
+@media (max-width: 760px) {
+  body {
+    margin-inline: 60px;
+  }
+  header {
+    padding-inline: 60px;
+  }
+  header button span {
+    display: none;
+  }
 }
